@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -17,14 +18,14 @@ public class Case {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "casename",length = 10, nullable = false)
+    @Column(length = 10, nullable = false)
     private String caseName;
 
-    @Column(name = "description",length = 100, nullable = false)
+    @Column(length = 100, nullable = false)
     private String description;
 
-    @Column(name = "casevalue", length = 20, precision = 20, scale = 2, nullable = false)
-    private Double caseValue;
+    @Column(length = 20, precision = 20, scale = 2, nullable = false)
+    private BigDecimal caseValue;
 
     @ManyToOne
     @JoinColumn(name = "user_id")

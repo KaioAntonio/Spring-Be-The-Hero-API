@@ -31,7 +31,7 @@ public class User {
     private String city;
 
     @Column(length = 2, nullable = false)
-    private String UF;
+    private String uf;
 
     @Column(length = 30, nullable = false)
     private String password;
